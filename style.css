@@ -1647,3 +1647,22 @@ header {
 .product-card:hover {
     transform: translateY(-5px);
 }
+
+.hidden {
+    display: none;
+}
+
+.cart {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-box {
+    background: white;
+    padding: 20px;
+    width: 300px;
+}
