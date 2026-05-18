@@ -2,124 +2,38 @@
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TRADEDOME — строительный маркетплейс</title>
-
-    <link rel="stylesheet" href="style.css" />
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <meta charset="UTF-8">
+    <title>TradeDome — Главная</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<div id="cart" class="cart hidden">
-    <div class="cart-panel">
-
-        <div class="cart-header">
-            <h2>Корзина</h2>
-            <button onclick="toggleCart()">✖</button>
-        </div>
-
-        <div id="cart-items"></div>
-
-        <div class="cart-total">
-            Итого: <span id="total">0</span> $
-        </div>
-
-        <input id="name" placeholder="Имя">
-        <input id="address" placeholder="Адрес">
-
-        <button onclick="placeOrder()" class="buy-btn">Оформить заказ</button>
-
-        <p id="msg"></p>
-
-    </div>
-</div>
 
 <body>
 
-    <header class="header">
-
-        <div class="logo">BUILD<span>PRO</span></div>
-
-        <nav class="nav">
-            <a href="#">Главная</a>
-            <a href="#">Каталог</a>
-            <a href="#">Акции</a>
-            <a href="#">Контакты</a>
+    <header>
+        <div class="logo">TradeDome</div>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="catalog.html">Каталог</a>
+            <a href="about.html">О нас</a>
+            <a href="contact.html">Контакты</a>
         </nav>
-
-        <div class="header-actions">
-            <button class="cart-btn">🛒 Корзина</button>
-            <button class="order-btn">Заказать</button>
-        </div>
-
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>TRADEDOME — материалы будущего</h1>
-            <p>Премиальный строительный маркетплейс</p>
-            <button class="btn big">Перейти в каталог</button>
+    <div class="container">
+        <h1>TradeDome</h1>
+        <p>Лучший строительный магазин в Сунже и Республике Ингушетия</p>
+
+        <div class="card">
+            🔨 Строительные материалы • 🚿 Сантехника • ⚡ Электрика
         </div>
-    </section>
 
-    <section class="filters">
-        <button onclick="filterProducts('all')">Все</button>
-        <button onclick="filterProducts('cement')">Цемент</button>
-        <button onclick="filterProducts('tools')">Инструменты</button>
-    </section>
-
-    <section id="products" class="products">
-        <h2>Каталог товаров</h2>
-
-        <div class="grid">
-
-            <div class="card" data-category="cement">
-                <img src="https://images.unsplash.com/photo-1581093458791-9d42e1a6c3f6" />
-                <h3>Цемент PRO</h3>
-                <p>Высокая прочность</p>
-                <span>12$</span>
-                <button onclick="addToCart('Цемент PRO', 12)">В корзину</button>
-            </div>
-
-            <div class="card" data-category="cement">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" />
-                <h3>Кирпич Premium</h3>
-                <p>Идеальная геометрия</p>
-                <span>0.5$</span>
-                <button onclick="addToCart('Кирпич Premium', 0.5)">В корзину</button>
-            </div>
-
-            <div class="card" data-category="tools">
-                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" />
-                <h3>Инструменты Elite</h3>
-                <p>Профессиональный уровень</p>
-                <span>89$</span>
-                <button onclick="addToCart('Инструменты Elite', 89)">В корзину</button>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="cart" class="cart">
-        <h2>Корзина TRADEDOME</h2>
-
-        <div id="cart-items"></div>
-
-        <h3 id="total">Итого: 0$</h3>
-
-        <div class="checkout">
-            <input placeholder="Имя" />
-            <input placeholder="Телефон" />
-            <input placeholder="Адрес" />
-            <button onclick="checkout()">Оформить заказ</button>
-        </div>
-    </section>
+        <a class="btn" href="catalog.html">Перейти в каталог</a>
+    </div>
 
     <footer>
-        © 2026 TRADEDOME. All rights reserved.
+        © 2026 TradeDome
     </footer>
 
-    <script src="script.js"></script>
 </body>
 
 </html>
