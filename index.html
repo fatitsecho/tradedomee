@@ -2,192 +2,67 @@
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TradeDome - Строительный магазин</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premium Build Store</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
-<!-- КОРЗИНА -->
-<div id="cart" class="cart hidden">
-    <div class="cart-box">
-
-        <div class="cart-header">
-            <h2>Корзина</h2>
-            <button onclick="toggleCart()">✖</button>
-        </div>
-
-        <div id="cart-items"></div>
-
-        <h3 id="total">Итого: 0 ₽</h3>
-
-        <hr>
-
-        <h3>Оформление заказа</h3>
-
-        <input id="name" placeholder="Имя">
-        <input id="address" placeholder="Адрес">
-
-        <button onclick="placeOrder()">Купить сейчас</button>
-
-        <p id="msg"></p>
-
-    </div>
-</div>
 
 <body>
 
-    <!-- HEADER -->
-    <header>
-
-        <div class="container header-container">
-            <div class="logo">TradeDome</div>
-            <nav>
-                <ul>
-                    <li><a href="#hero">Главная</a></li>
-                    <li><a href="#categories">Каталог</a></li>
-                    <li><a href="#about">О компании</a></li>
-                    <li><a href="#contacts">Контакты</a></li>
-                </ul>
-            </nav>
-            <button class="btn-primary">Корзина</button>
-        </div>
+    <header class="header">
+        <div class="logo">BUILD<span>PRO</span></div>
+        <nav>
+            <a href="#">Главная</a>
+            <a href="#">Каталог</a>
+            <a href="#">Акции</a>
+            <a href="#">Контакты</a>
+        </nav>
+        <button class="btn">Заказать</button>
     </header>
 
-    <!-- MAIN -->
-    <main>
-        <!-- Hero -->
-        <section class="hero" id="hero">
-            <div class="container hero-container">
-                <div class="hero-text">
-                    <h1>Все для строительства и ремонта</h1>
-                    <p>Инструменты, материалы и техника по лучшим ценам</p>
-                    <a href="#categories" class="btn-accent">Каталог товаров</a>
-                </div>
-                <div class="hero-image">
-                    <img src="images/hero.png" alt="Строительные инструменты">
-                </div>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Премиальные материалы для строительства</h1>
+            <p>Качество, которое видно с первого взгляда</p>
+            <button class="btn big">Смотреть каталог</button>
+        </div>
+    </section>
+
+    <section class="products">
+        <h2>Популярные товары</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1581093458791-9d42e1a6c3f6" />
+                <h3>Премиум цемент</h3>
+                <p>Высокая прочность класса A+</p>
+                <span>12$</span>
             </div>
-        </section>
 
-        <!-- Categories -->
-        <section class="categories" id="categories">
-            <div class="container">
-                <h2>Категории товаров</h2>
-                <div class="category-list">
-                    <div class="category">Инструменты</div>
-                    <div class="category">Сантехника</div>
-                    <div class="category">Электрика</div>
-                    <div class="category">Стройматериалы</div>
-                </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" />
+                <h3>Кирпич облицовочный</h3>
+                <p>Идеальная геометрия</p>
+                <span>0.5$</span>
             </div>
-        </section>
 
-        <!-- Featured Products -->
-        <section class="featured-products">
-            <div class="container">
-                <h2>Популярные товары</h2>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <img src="images/tool1.jpg" alt="Дрель">
-                        <h3>Дрель</h3>
-                        <p>3500 ₽</p>
-                        <button class="btn-accent">Купить</button>
-                    </div>
-                    <div class="product-card">
-                        <img src="images/tool2.jpg" alt="Отвертка">
-                        <h3>Отвертка</h3>
-                        <p>800 ₽</p>
-                        <button class="btn-accent">Купить</button>
-                    </div>
-                    <div class="product-card">
-                        <img src="images/tool3.jpg" alt="Молоток">
-                        <h3>Молоток</h3>
-                        <p>1200 ₽</p>
-                        <button class="btn-accent">Купить</button>
-                    </div>
-                </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" />
+                <h3>Инструменты PRO</h3>
+                <p>Профессиональный уровень</p>
+                <span>89$</span>
             </div>
-        </section>
 
-        <!-- About -->
-        <section class="about" id="about">
-            <div class="container about-container">
-                <div class="about-item">
-                    <h3>Быстрая доставка</h3>
-                    <p>Получите заказ в течение 1-3 дней.</p>
-                </div>
-                <div class="about-item">
-                    <h3>Гарантия качества</h3>
-                    <p>Только проверенные товары от лучших производителей.</p>
-                </div>
-                <div class="about-item">
-                    <h3>Консультации</h3>
-                    <p>Поможем выбрать подходящий инструмент и материалы.</p>
-                </div>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Contacts -->
-        <section class="contacts" id="contacts">
-            <div class="container" style="text-align:center; padding:80px 0;">
-                <h2>Контакты</h2>
-                <p>Email: info@tradedome.ru</p>
-                <p>Телефон: +7 (988) 823 15 34 </p>
-                <p>Адрес: г. Сунжа ,ул. Калинина 99</p>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- FOOTER -->
     <footer>
-        <div class="container footer-container">
-            <p>© 2026 TradeDome. Все права защищены.</p>
-        </div>
+        <p>© 2026 BUILDPRO. Все права защищены.</p>
     </footer>
-
-    <!-- Корзина -->
-    <div class="cart-overlay hidden">
-        <div class="cart">
-            <h2>Корзина</h2>
-            <button class="close-cart">&times;</button>
-            <div class="cart-items"></div>
-            <div class="cart-total">
-                <span>Итого:</span>
-                <span class="total-price">0 ₽</span>
-            </div>
-            <button class="checkout-btn">Оформить заказ</button>
-        </div>
-    </div>
 
     <script src="script.js"></script>
 </body>
-<!-- КОРЗИНА -->
-<div id="cart" class="cart hidden">
-    <div class="cart-box">
-
-        <div class="cart-header">
-            <h2>Корзина</h2>
-            <button onclick="toggleCart()">✖</button>
-        </div>
-
-        <div id="cart-items"></div>
-
-        <h3 id="total">Итого: 0 ₽</h3>
-
-        <hr>
-
-        <h3>Оформление заказа</h3>
-
-        <input id="name" placeholder="Имя">
-        <input id="address" placeholder="Адрес">
-
-        <button onclick="placeOrder()">Купить сейчас</button>
-
-        <p id="msg"></p>
-
-    </div>
-</div>
 
 </html>
