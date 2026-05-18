@@ -1184,26 +1184,62 @@ document.querySelector(".checkout-btn").addEventListener("click", () => {
 
     checkoutCart(items);
 });
+let cart = [];
+
+function addToCart(name, price) {
+    cart.push({ name, price });
+    updateCart();
+}
+
+function updateCart() {
+    const items = document.getElementById("cart-items");
+    const total = document.getElementById("total");
+
+    items.innerHTML = "";
+
+    let sum = 0;
+
+    cart.forEach((item, index) => {
+        const div = document.createElement("div");
+
+        div.innerHTML = `
+            ${item.name} - ${item.price} ₽
+            <button onclick="removeItem(${index})">❌</button>
+        `;
+
+        items.appendChild(div);
+
+        sum += item.price;
+    });
+
+    total.innerText = "Итого: " + sum + " ₽";
+}
+
+function removeItem(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+
+function toggleCart() {
+    document.getElementById("cart").classList.toggle("hidden");
+}
 
 function placeOrder() {
     const name = document.getElementById("name").value;
     const address = document.getElementById("address").value;
-    const msg = document.getElementById("order-msg");
+    const msg = document.getElementById("msg");
 
     if (cart.length === 0) {
-        msg.style.color = "red";
         msg.innerText = "Корзина пустая!";
         return;
     }
 
     if (!name || !address) {
-        msg.style.color = "red";
         msg.innerText = "Введите имя и адрес!";
         return;
     }
 
-    msg.style.color = "green";
-    msg.innerText = `Спасибо, ${name}! Заказ оформлен 🚀`;
+    msg.innerText = "Заказ оформлен 🚀";
 
     cart = [];
     updateCart();
