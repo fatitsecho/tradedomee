@@ -161,3 +161,88 @@ footer {
     padding: 20px;
     color: #555;
 }
+
+
+/* HEADER */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: #111;
+    color: white;
+}
+
+
+/* LOGO */
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: orange;
+}
+
+
+/* NAV */
+
+.nav {
+    display: flex;
+    gap: 25px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.nav a:hover {
+    color: orange;
+}
+
+
+/* BUTTONS */
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.cart-btn,
+.order-btn {
+    padding: 8px 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.cart-btn {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+.order-btn {
+    background: orange;
+    color: black;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
