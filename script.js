@@ -1194,25 +1194,18 @@ function addToCart(name, price) {
 function updateCart() {
     const items = document.getElementById("cart-items");
     const total = document.getElementById("total");
-
     items.innerHTML = "";
-
     let sum = 0;
-
     cart.forEach((item, index) => {
         const div = document.createElement("div");
-
         div.innerHTML = `
-            <span>${item.name} - ${item.price} ₽</span>
+            ${item.name} - ${item.price} ₽
             <button onclick="removeItem(${index})">❌</button>
         `;
-
         items.appendChild(div);
-
         sum += item.price;
     });
-
-    total.innerText = "Итого: " + sum + " ₽";
+    total.innerText = sum + " ₽";
 }
 
 function removeItem(index) {
@@ -1228,18 +1221,15 @@ function placeOrder() {
     const name = document.getElementById("name").value;
     const address = document.getElementById("address").value;
     const msg = document.getElementById("msg");
-
     if (cart.length === 0) {
         msg.innerText = "Корзина пустая!";
         return;
     }
-
     if (!name || !address) {
         msg.innerText = "Введите имя и адрес!";
         return;
     }
-
-    msg.innerText = "Заказ оформлен 🚀";
+    msg.innerText = "Заказ оформлен! 🚀";
     cart = [];
     updateCart();
 }

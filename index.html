@@ -12,7 +12,10 @@
 <div id="cart" class="cart hidden">
     <div class="cart-box">
 
-        <h2>Корзина</h2>
+        <div class="cart-header">
+            <h2>Корзина</h2>
+            <button onclick="toggleCart()">✖</button>
+        </div>
 
         <div id="cart-items"></div>
 
@@ -26,59 +29,6 @@
         <input id="address" placeholder="Адрес">
 
         <button onclick="placeOrder()">Купить сейчас</button>
-
-        <p id="msg"></p>
-
-        <button onclick="toggleCart()">Закрыть</button>
-
-    </div>
-</div>
-<!-- CART OVERLAY -->
-<div id="cart" class="cart">
-    <div class="cart-box">
-
-        <div class="cart-header">
-            <h2>Корзина</h2>
-            <button onclick="toggleCart()">✖</button>
-        </div>
-
-        <div id="cart-items"></div>
-
-        <div class="cart-total">
-            <strong>Итого:</strong>
-            <span id="total">0 ₽</span>
-        </div>
-
-        <hr>
-
-        <h3>Оформление заказа</h3>
-
-        <input id="name" placeholder="Имя">
-        <input id="address" placeholder="Адрес">
-
-        <button class="buy-btn" onclick="placeOrder()">Купить сейчас</button>
-
-        <p id="msg"></p>
-
-    </div>
-</div>
-
-<div id="cart" class="cart hidden">
-    <div class="cart-box">
-
-        <div class="cart-header">
-            <h2>Корзина</h2>
-            <button onclick="toggleCart()">✖</button>
-        </div>
-
-        <div id="cart-items"></div>
-
-        <h3 id="total">0 ₽</h3>
-
-        <input id="name" placeholder="Имя">
-        <input id="address" placeholder="Адрес">
-
-        <button onclick="placeOrder()">Купить</button>
 
         <p id="msg"></p>
 
@@ -120,9 +70,7 @@
             </div>
         </section>
 
-
         <!-- Categories -->
-
         <section class="categories" id="categories">
             <div class="container">
                 <h2>Категории товаров</h2>
@@ -215,5 +163,31 @@
 
     <script src="script.js"></script>
 </body>
+<!-- КОРЗИНА -->
+<div id="cart" class="cart hidden">
+    <div class="cart-box">
+
+        <div class="cart-header">
+            <h2>Корзина</h2>
+            <button onclick="toggleCart()">✖</button>
+        </div>
+
+        <div id="cart-items"></div>
+
+        <h3 id="total">Итого: 0 ₽</h3>
+
+        <hr>
+
+        <h3>Оформление заказа</h3>
+
+        <input id="name" placeholder="Имя">
+        <input id="address" placeholder="Адрес">
+
+        <button onclick="placeOrder()">Купить сейчас</button>
+
+        <p id="msg"></p>
+
+    </div>
+</div>
 
 </html>

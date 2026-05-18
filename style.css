@@ -1611,30 +1611,29 @@ body::after {
 .cart {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
+    justify-content: flex-end;
+    opacity: 1;
+    pointer-events: all;
+    z-index: 1000;
 }
 
-.cart-box {
-    background: white;
-    padding: 20px;
-    width: 320px;
-    border-radius: 12px;
-}
-
-.hidden {
+.cart.hidden {
     display: none;
 }
 
-#cart-items div {
-    display: flex;
-    justify-content: space-between;
-    margin: 5px 0;
+.cart-box {
+    width: 350px;
+    height: 100%;
+    background: white;
+    padding: 20px;
+    overflow-y: auto;
+    border-left: 1px solid #ccc;
 }
 
-button {
-    cursor: pointer;
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
