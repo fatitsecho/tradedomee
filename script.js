@@ -48,3 +48,53 @@ gsap.from(".card", {
     duration: 1,
     stagger: 0.15
 });
+let cart = [];
+
+function addToCart(name, price) {
+    cart.push({ name, price });
+    updateCart();
+}
+
+function updateCart() {
+    const items = document.getElementById("cart-items");
+    const total = document.getElementById("total");
+
+    items.innerHTML = "";
+    let sum = 0;
+
+    cart.forEach((item, i) => {
+        items.innerHTML += `
+            <div>
+                ${item.name} - ${item.price} $
+                <button onclick="removeItem(${i})">❌</button>
+            </div>
+        `;
+        sum += item.price;
+    });
+
+    total.innerText = sum;
+}
+
+function removeItem(i) {
+    cart.splice(i, 1);
+    updateCart();
+}
+
+function toggleCart() {
+    document.getElementById("cart").classList.toggle("hidden");
+}
+
+function placeOrder() {
+    const name = document.getElementById("name").value;
+    const address = document.getElementById("address").value;
+    const msg = document.getElementById("msg");
+
+    if (!name || !address) {
+        msg.innerText = "Заполните данные!";
+        return;
+    }
+
+    msg.innerText = "Заказ оформлен 🚀";
+    cart = [];
+    updateCart();
+}

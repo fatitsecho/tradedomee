@@ -10,6 +10,29 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
+<div id="cart" class="cart hidden">
+    <div class="cart-panel">
+
+        <div class="cart-header">
+            <h2>Корзина</h2>
+            <button onclick="toggleCart()">✖</button>
+        </div>
+
+        <div id="cart-items"></div>
+
+        <div class="cart-total">
+            Итого: <span id="total">0</span> $
+        </div>
+
+        <input id="name" placeholder="Имя">
+        <input id="address" placeholder="Адрес">
+
+        <button onclick="placeOrder()" class="buy-btn">Оформить заказ</button>
+
+        <p id="msg"></p>
+
+    </div>
+</div>
 
 <body>
 
