@@ -8,6 +8,31 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+<!-- КОРЗИНА -->
+<div id="cart" class="cart hidden">
+    <div class="cart-box">
+
+        <h2>Корзина</h2>
+
+        <div id="cart-items"></div>
+
+        <h3 id="total">Итого: 0 ₽</h3>
+
+        <hr>
+
+        <h3>Оформление заказа</h3>
+
+        <input id="name" placeholder="Имя">
+        <input id="address" placeholder="Адрес">
+
+        <button onclick="placeOrder()">Купить сейчас</button>
+
+        <p id="msg"></p>
+
+        <button onclick="toggleCart()">Закрыть</button>
+
+    </div>
+</div>
 
 <body>
 
