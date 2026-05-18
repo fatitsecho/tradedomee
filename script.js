@@ -1184,3 +1184,36 @@ document.querySelector(".checkout-btn").addEventListener("click", () => {
 
     checkoutCart(items);
 });
+let cart = [];
+
+const buttons = document.querySelectorAll(".btn-accent");
+
+buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const card = btn.parentElement;
+        const name = card.querySelector("h3").innerText;
+        const price = card.querySelector("p").innerText;
+
+        cart.push({ name, price });
+        updateCart();
+    });
+});
+
+function updateCart() {
+    const cartItems = document.querySelector(".cart-items");
+    const totalPrice = document.querySelector(".total-price");
+
+    cartItems.innerHTML = "";
+
+    let total = 0;
+
+    cart.forEach(item => {
+        const div = document.createElement("div");
+        div.innerText = item.name + " - " + item.price;
+        cartItems.appendChild(div);
+
+        total += parseInt(item.price);
+    });
+
+    totalPrice.innerText = total + " ₽";
+}
