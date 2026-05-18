@@ -1647,3 +1647,21 @@ header {
 .product-card:hover {
     transform: translateY(-5px);
 }
+
+.checkout {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkout input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+#order-msg {
+    font-size: 14px;
+    margin-top: 5px;
+}

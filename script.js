@@ -1184,3 +1184,27 @@ document.querySelector(".checkout-btn").addEventListener("click", () => {
 
     checkoutCart(items);
 });
+
+function placeOrder() {
+    const name = document.getElementById("name").value;
+    const address = document.getElementById("address").value;
+    const msg = document.getElementById("order-msg");
+
+    if (cart.length === 0) {
+        msg.style.color = "red";
+        msg.innerText = "Корзина пустая!";
+        return;
+    }
+
+    if (!name || !address) {
+        msg.style.color = "red";
+        msg.innerText = "Введите имя и адрес!";
+        return;
+    }
+
+    msg.style.color = "green";
+    msg.innerText = `Спасибо, ${name}! Заказ оформлен 🚀`;
+
+    cart = [];
+    updateCart();
+}

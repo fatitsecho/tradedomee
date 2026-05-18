@@ -125,14 +125,34 @@
     <div class="cart-overlay hidden">
         <div class="cart">
             <h2>Корзина</h2>
-            <button class="close-cart">&times;</button>
+
+            <button onclick="toggleCart()">Закрыть ✖</button>
+
             <div class="cart-items"></div>
+
             <div class="cart-total">
                 <span>Итого:</span>
-                <span class="total-price">0 ₽</span>
+                <span id="total">0 ₽</span>
             </div>
-            <button class="checkout-btn">Оформить заказ</button>
+
+            <hr>
+
+            <!-- ОФОРМЛЕНИЕ ЗАКАЗА -->
+            <div class="checkout">
+                <h3>Оформление заказа</h3>
+
+                <input type="text" id="name" placeholder="Ваше имя">
+                <input type="text" id="address" placeholder="Адрес доставки">
+
+                <button onclick="placeOrder()" class="btn-accent">
+        Купить сейчас
+    </button>
+
+                <p id="order-msg"></p>
+            </div>
         </div>
+        <button class="checkout-btn">Оформить заказ</button>
+    </div>
     </div>
 
     <script src="script.js"></script>
