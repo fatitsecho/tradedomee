@@ -1217,3 +1217,54 @@ function updateCart() {
 
     totalPrice.innerText = total + " ₽";
 }
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+const buttons = document.querySelectorAll(".btn-accent");
+
+buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const card = btn.parentElement;
+        const name = card.querySelector("h3").innerText;
+        const price = parseInt(card.querySelector("p").innerText);
+
+        cart.push({ name, price });
+        updateCart();
+    });
+});
+
+function updateCart() {
+    const cartItems = document.querySelector(".cart-items");
+    const total = document.getElementById("total");
+
+    cartItems.innerHTML = "";
+
+    let sum = 0;
+
+    cart.forEach((item, index) => {
+        const div = document.createElement("div");
+
+        div.innerHTML = `
+            ${item.name} - ${item.price} ₽ 
+            <button onclick="removeItem(${index})">❌</button>
+        `;
+
+        cartItems.appendChild(div);
+
+        sum += item.price;
+    });
+
+    total.innerText = sum + " ₽";
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function removeItem(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+
+function toggleCart() {
+    document.getElementById("cart").classList.toggle("hidden");
+}
+
+updateCart();
